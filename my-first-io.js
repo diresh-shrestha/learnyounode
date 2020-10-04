@@ -8,16 +8,16 @@
 
  */
 
-'use strict'
+"use strict";
 
 //fs required for filesystem operation
-const fs = require('fs');
+const fs = require("fs");
 
 //All synchronous filesystem methods in the fs module end with 'Sync'
-//readFileSync returns a buffer object. use 'utf8' as 2nd argument 
+//readFileSync returns a buffer object. use 'utf8' as 2nd argument
 //to convert it into a string. Alternatively, use .toString() method
-const file = fs.readFileSync(process.argv[2], 'utf8');
+const file = fs.readFileSync(process.argv[2], "utf8");
 //split based on \n characters
-const lines = file.split('\n').length - 1;
+const lines = file.split("\n").length - 1;
 
 console.log(lines);

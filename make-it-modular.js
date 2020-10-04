@@ -41,19 +41,18 @@
   does learnyounode, or the verifier, and just work.
  */
 
-'use strict'
+"use strict";
 
-const mymodule = require('./mymodule');
+const mymodule = require("./mymodule");
 const folder = process.argv[2];
 const fileExt = process.argv[3];
 
 //mymodule is used to call the module function
 //folder, fileExt and a callback function is passed as arguments
 // the callback receives list, which is an array, as arguments
-mymodule(folder, fileExt, function(err, list) {
-    if (err) return err;
-    list.forEach(function (file) {
-        console.log(file);
-    })
-}) 
-
+mymodule(folder, fileExt, function (err, list) {
+  if (err) return err;
+  list.forEach(function (file) {
+    console.log(file);
+  });
+});

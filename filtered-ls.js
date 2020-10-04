@@ -14,29 +14,26 @@
   The list of files should be printed to the console, one file per line. You  
   must use asynchronous I/O.  */
 
+"use strict";
 
-  'use strict'
+const fs = require("fs");
+//path module to work with file paths, extend file paths, etc.
+const path = require("path");
 
-  const fs = require('fs');
-  //path module to work with file paths, extend file paths, etc.
-  const path = require('path');
+const folder = process.argv[2];
+//add "." to the file extension argument
+let ext = "." + process.argv[3];
 
-  const folder = process.argv[2];
-  //add "." to the file extension argument
-  let ext = "." + process.argv[3];
-
-
-  //.readdir() reads the contents of a directory
-  fs.readdir(folder, function(err, files) {
-    if (err) {
-        return console.log(err);
-    }
-    //files is an array of contents inside the directory
-    //forEach(callback(currentValue)) iterates over elements inside an array
-    files.forEach(function(file) {
-        //path.extname() finds the extension of the filename
-        //if the extensions match, console.log
-        if (path.extname(file) === ext) 
-        console.log(file);
-    })
-  })
+//.readdir() reads the contents of a directory
+fs.readdir(folder, function (err, files) {
+  if (err) {
+    return console.log(err);
+  }
+  //files is an array of contents inside the directory
+  //forEach(callback(currentValue)) iterates over elements inside an array
+  files.forEach(function (file) {
+    //path.extname() finds the extension of the filename
+    //if the extensions match, console.log
+    if (path.extname(file) === ext) console.log(file);
+  });
+});

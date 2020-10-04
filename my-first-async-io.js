@@ -5,16 +5,16 @@
   The full path to the file to read will be provided as the first  
   command-line argument.  */
 
-  'use strict'
+"use strict";
 
-  const fs = require('fs');
-  const file = process.argv[2];
+const fs = require("fs");
+const file = process.argv[2];
 
-  //for asynchronous filesystem use .readFile()
-  fs.readFile(file, 'utf8', function(err, data) {
-      if (err) {
-          return console.log(err);
-      }
-      const lines = data.split("\n").length - 1;
-      console.log(lines);
-  })
+//for asynchronous filesystem use .readFile()
+fs.readFile(file, "utf8", function (err, data) {
+  if (err) {
+    return console.log(err);
+  }
+  const lines = data.split("\n").length - 1;
+  console.log(lines);
+});
